@@ -4,6 +4,11 @@ var target_list = []
 
 signal shoot_projectile
 
+func _ready():
+	print(str($Range/CollisionShape2D.shape.get_radius()))
+	$Range/CollisionShape2D.shape.radius = 100
+	print(str($Range/CollisionShape2D.shape.get_radius()))
+
 func _on_AttackSpeed_timeout():
 	if target_list.size() > 0:
 		var projectile_origin_pos = position
