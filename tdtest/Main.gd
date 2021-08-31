@@ -23,10 +23,11 @@ func _unhandled_input(event):
 		$tower_placement.clear()
 		
 		# get the tile location of the mouse cursor
-		var tile = $tower_placement.world_to_map(event.position)
+		var tile = $tower_placement.world_to_map(event.global_position)
 		
 		if not tile in invalid_tiles:
 			# color green / valid tile
+			print(tile.x)
 			$tower_placement.set_cell(tile.x, tile.y, 0)
 		else:
 			# color red / invalid tile
@@ -45,6 +46,7 @@ func _unhandled_input(event):
 			# place the tower
 			var tower_instance = tower.instance()
 			tower_instance.connect("shoot_projectile", self, "shoot_projectile")
+			print(tile * Vector2(32, 32))
 			tower_instance.position = tile * Vector2(32, 32)
 			$entities.add_child(tower_instance)
 
