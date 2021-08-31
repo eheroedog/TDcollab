@@ -1,10 +1,13 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/Tiles/GrassTileSetIMG.png" type="Texture" id=1]
+[ext_resource path="res://tower2.tscn" type="PackedScene" id=2]
 [ext_resource path="res://PathSpawner.gd" type="Script" id=3]
 [ext_resource path="res://basicTower.tscn" type="PackedScene" id=4]
 [ext_resource path="res://End.gd" type="Script" id=5]
 [ext_resource path="res://Main.gd" type="Script" id=6]
+[ext_resource path="res://tower1a.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/tower3.png" type="Texture" id=8]
 
 [sub_resource type="TileSet" id=1]
 0/name = "GrassTileSetIMG.png 0"
@@ -200,7 +203,7 @@ __meta__ = {
 [node name="entities" type="YSort" parent="."]
 
 [node name="Basic" parent="." instance=ExtResource( 4 )]
-position = Vector2( 212.335, 112.365 )
+position = Vector2( 204.562, 136.594 )
 
 [node name="End" type="Area2D" parent="."]
 position = Vector2( 1198.91, 752.201 )
@@ -211,6 +214,16 @@ __meta__ = {
 
 [node name="end" type="CollisionShape2D" parent="End"]
 shape = SubResource( 3 )
+
+[node name="tower2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 295.185, 136.843 )
+
+[node name="tower1a" parent="tower2" instance=ExtResource( 7 )]
+position = Vector2( -54.5634, -1.09834 )
+
+[node name="tower3" type="Sprite" parent="."]
+position = Vector2( 330.506, 137.173 )
+texture = ExtResource( 8 )
 
 [connection signal="shoot_projectile" from="Basic" to="." method="_on_Basic_shoot_projectile"]
 [connection signal="area_entered" from="End" to="End" method="_on_End_area_entered"]
