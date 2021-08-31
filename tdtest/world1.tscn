@@ -200,7 +200,7 @@ __meta__ = {
 [node name="entities" type="YSort" parent="."]
 
 [node name="Basic" parent="." instance=ExtResource( 4 )]
-position = Vector2( 399.04, 142.095 )
+position = Vector2( 212.335, 112.365 )
 
 [node name="End" type="Area2D" parent="."]
 position = Vector2( 1198.91, 752.201 )
