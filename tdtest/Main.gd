@@ -27,7 +27,7 @@ func _unhandled_input(event):
 		
 		if not tile in invalid_tiles:
 			# color green / valid tile
-			print(tile.x)
+
 			$tower_placement.set_cell(tile.x, tile.y, 0)
 		else:
 			# color red / invalid tile
@@ -46,11 +46,11 @@ func _unhandled_input(event):
 			# place the tower
 			var tower_instance = tower.instance()
 			tower_instance.connect("shoot_projectile", self, "shoot_projectile")
-			print(tile * Vector2(32, 32))
+			
 			tower_instance.position = tile * Vector2(32, 32)
 			$entities.add_child(tower_instance)
 
-func _on_Basic_shoot_projectile(origin, target):
+func shoot_projectile(origin, target):
 	var projectile_instance = bullet.instance()
 	projectile_instance.origin_pos = origin
 	projectile_instance.target_pos = target
