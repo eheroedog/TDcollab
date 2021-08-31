@@ -11,7 +11,7 @@ func set_tower_preview(mouse_position):
 	range_texture.texture = texture
 	range_texture.modulate = Color("ad54ff3c")
 	
-	var control = Contorl.new()
+	var control = Control.new()
 	control.add_child(range_texture,true)
 	control.rect_position = mouse_position
 	pass
