@@ -1,7 +1,7 @@
 extends Node2D
 
-export var damage_value = 1
-export var hp = 5
+export var damage_value = 5
+export var hp = 20
 
 func _ready():
 	pass

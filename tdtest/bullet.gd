@@ -46,6 +46,6 @@ func set_sprite_rotation():
 
 
 func _on_bullet_area_entered(area):
-	if "Enemyg" in area.name:
+	if "Enemyg" in area.name or "bossg" in  area.name:
 		area.take_damage(damage)
 		queue_free()

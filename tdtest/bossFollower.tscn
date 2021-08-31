@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Boss.tscn" type="PackedScene" id=1]
+[ext_resource path="res://bossFollower.gd" type="Script" id=2]
+
+[node name="bossFollower" type="PathFollow2D"]
+rotate = false
+loop = false
+script = ExtResource( 2 )
+
+[node name="bossg" parent="." instance=ExtResource( 1 )]

@@ -9,6 +9,5 @@ rotation = 0.00793869
 rotate = false
 loop = false
 script = ExtResource( 2 )
-moveSpeed = 150
 
 [node name="Enemyg" parent="." instance=ExtResource( 1 )]

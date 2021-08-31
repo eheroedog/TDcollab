@@ -13,11 +13,11 @@ func _on_AttackSpeed_timeout():
 		emit_signal("shoot_projectile", projectile_origin_pos, target_list[0].global_position)
 
 func _on_Range_area_entered(area):
-	if "Enemyg" in area.name:
+	if "Enemyg"in area.name or "bossg" in  area.name:
 		target_list.append(area)
 
 func _on_Range_area_exited(area):
-	if "Enemyg" in area.name and target_list.size() > 0:
+	if "Enemyg" in area.name or "bossg" in  area.name and target_list.size() > 0:
 		target_list.erase(area)
 
 
