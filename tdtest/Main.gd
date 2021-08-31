@@ -12,6 +12,12 @@ func _ready():
 	# towers cannot be placed on these tiles
 	invalid_tiles = $Nav/TileMap_nav.get_used_cells()
 
+func _input(event):
+	var just_pressed = event.is_pressed() and not event.is_echo()
+	if Input.is_action_pressed("add_tower") and just_pressed:
+		$tower_placement.clear()
+		can_place_tower = !can_place_tower
+
 func _unhandled_input(event):
 	if event is InputEventMouseMotion and can_place_tower:
 		$tower_placement.clear()
@@ -39,7 +45,7 @@ func _unhandled_input(event):
 			# place the tower
 			var tower_instance = tower.instance()
 			tower_instance.connect("shoot_projectile", self, "shoot_projectile")
-			tower_instance.position = tile * Vector2(64, 64)
+			tower_instance.position = tile * Vector2(32, 32)
 			$entities.add_child(tower_instance)
 
 func _on_Basic_shoot_projectile(origin, target):
