@@ -1,8 +1,8 @@
 extends Node2D
 
-onready var Enemy = preload("res://enemy1.tscn")
-onready var tower = preload("res://basicTower.tscn")
-onready var bullet = preload("res://bullet.tscn")
+onready var Enemy = preload("res://Scenes/Mobs/enemy1.tscn")
+onready var tower = preload("res://Scenes/Towers/basicTower.tscn")
+onready var bullet = preload("res://Scenes/Towers/bullet.tscn")
 
 var can_place_tower = false
 var invalid_tiles

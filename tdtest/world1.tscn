@@ -5,7 +5,7 @@
 [ext_resource path="res://End.gd" type="Script" id=5]
 [ext_resource path="res://Main.gd" type="Script" id=6]
 [ext_resource path="res://Assets/Tiles/tower_placement_tileset.png" type="Texture" id=9]
-[ext_resource path="res://Assets/TX Tileset Wall.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Tiles/TX Tileset Wall.png" type="Texture" id=10]
 
 [sub_resource type="TileSet" id=1]
 0/name = "GrassTileSetIMG.png 0"
