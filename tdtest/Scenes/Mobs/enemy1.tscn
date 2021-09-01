@@ -8,7 +8,7 @@ extents = Vector2( 24.065, 25.1891 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "right"
-length = 1.42
+length = 0.75
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -17,7 +17,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
@@ -32,7 +32,7 @@ position = Vector2( 0.667415, -0.834279 )
 scale = Vector2( 1.64656, 1.65699 )
 texture = ExtResource( 1 )
 hframes = 8
-frame = 7
+frame = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.352882, 0.0672779 )

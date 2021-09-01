@@ -11,6 +11,7 @@ radius = 65.3051
 extents = Vector2( 14.8291, 14.9657 )
 
 [node name="Basic" type="Node2D"]
+z_index = 1
 script = ExtResource( 2 )
 tower_range = 200
 
