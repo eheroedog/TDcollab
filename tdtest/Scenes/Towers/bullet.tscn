@@ -8,6 +8,7 @@ extents = Vector2( 3.57313, 2.82886 )
 
 [node name="bullet" type="Area2D"]
 scale = Vector2( 0.75, 0.75 )
+z_index = 2
 script = ExtResource( 2 )
 
 [node name="bsprite" type="Sprite" parent="."]
