@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Assets/Tiles/GrassTileSetIMG.png" type="Texture" id=1]
 [ext_resource path="res://UI.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://End.gd" type="Script" id=5]
 [ext_resource path="res://Main.gd" type="Script" id=6]
 [ext_resource path="res://Assets/Tiles/TX Struct.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Towers/basicTower.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Tiles/tower_placement_tileset.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Tiles/TX Tileset Wall.png" type="Texture" id=10]
 
@@ -753,6 +754,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="GoldLabel" type="Label" parent="UI"]
+modulate = Color( 0.145098, 0.192157, 0.854902, 1 )
+margin_left = 696.0
+margin_top = 536.0
+margin_right = 731.0
+margin_bottom = 557.0
+rect_scale = Vector2( 3, 3 )
+text = "asd"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="End" type="Area2D" parent="."]
 position = Vector2( 1200, 464 )
 script = ExtResource( 5 )
@@ -767,5 +780,9 @@ shape = SubResource( 5 )
 tile_set = SubResource( 6 )
 cell_size = Vector2( 32, 32 )
 format = 1
+
+[node name="Basic" parent="." instance=ExtResource( 8 )]
+position = Vector2( 616, -72 )
+tower_range = 0
 
 [connection signal="area_entered" from="End" to="." method="_on_End_area_entered"]

@@ -4,6 +4,7 @@ var target_list = []
 var range_toggle = false
 
 export var tower_range = 100
+export var tower_cost = 2
 
 signal shoot_projectile
 

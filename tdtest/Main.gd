@@ -6,13 +6,19 @@ onready var bullet = preload("res://Scenes/Towers/bullet.tscn")
 
 var can_place_tower = false
 var invalid_tiles
+var lvl_gold = 0
+
 export var lvl_hp = 10
+export var starting_gold = 10
+
 
 func _ready():
 	
 	# towers cannot be placed on these tiles
 	invalid_tiles = $Nav/TileMap_nav.get_used_cells()
-
+	$UI/GoldLabel.text = str(starting_gold)
+	lvl_gold = starting_gold
+	
 func _input(event):
 	var just_pressed = event.is_pressed() and not event.is_echo()
 	if Input.is_action_pressed("add_tower") and just_pressed:
@@ -55,6 +61,7 @@ func shoot_projectile(origin, target):
 	projectile_instance.origin_pos = origin
 	projectile_instance.target_pos = target
 	$entities.add_child(projectile_instance)
+	
 
 
 func _on_End_area_entered(area):
