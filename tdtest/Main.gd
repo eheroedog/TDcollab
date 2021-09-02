@@ -6,6 +6,7 @@ onready var bullet = preload("res://Scenes/Towers/bullet.tscn")
 
 var can_place_tower = false
 var invalid_tiles
+export var lvl_hp = 10
 
 func _ready():
 	
@@ -46,7 +47,6 @@ func _unhandled_input(event):
 			# place the tower
 			var tower_instance = tower.instance()
 			tower_instance.connect("shoot_projectile", self, "shoot_projectile")
-			
 			tower_instance.position = tile * Vector2(32, 32)
 			$entities.add_child(tower_instance)
 
@@ -55,3 +55,9 @@ func shoot_projectile(origin, target):
 	projectile_instance.origin_pos = origin
 	projectile_instance.target_pos = target
 	$entities.add_child(projectile_instance)
+
+
+func _on_End_area_entered(area):
+	if "Enemyg" in area.name or "bossg" in area.name:
+		lvl_hp -= 1 #TODO take enemy damage
+		$UI/HPLabel.text = str(lvl_hp)

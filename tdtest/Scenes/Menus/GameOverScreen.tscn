@@ -1,0 +1,19 @@
+[gd_scene format=2]
+
+[node name="GameOverScreen" type="CanvasLayer"]
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1273.0
+margin_bottom = 729.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
