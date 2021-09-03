@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 77.7549 )
+
+[node name="Laser" type="RayCast2D"]
+position = Vector2( 32, 32 )
+enabled = true
+cast_to = Vector2( 9000, 0 )
+
+[node name="Line2D" type="Line2D" parent="."]
+modulate = Color( 0.552941, 0.588235, 0.988235, 1 )
+points = PoolVector2Array( 0, 0, 100, 0 )
+default_color = Color( 0.839216, 0.866667, 1, 1 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( -0.0936432, 0.327755 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 429.502, -3.57177 )
+shape = SubResource( 1 )
