@@ -3,8 +3,6 @@ extends Node2D
 export var damage_value = 1
 export var hp = 5
 
-func _ready():
-	pass
 
 func take_damage(damage):
 	hp -= damage
