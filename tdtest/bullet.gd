@@ -21,8 +21,6 @@ func _physics_process(delta):
 func set_sprite_rotation():
 	var angle
 	
-	#print(str(direction))
-	
 	if direction.y != 0:
 		angle = atan(direction.x / direction.y) * 180 / PI
 	else:

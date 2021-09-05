@@ -11,7 +11,7 @@
 [ext_resource path="res://Assets/Tiles/tower_placement_tileset.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Tiles/TX Tileset Wall.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Tiles/tile1a.png" type="Texture" id=11]
-[ext_resource path="res://Scenes/Towers/Laser.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Mobs/enemy1.tscn" type="PackedScene" id=12]
 
 [sub_resource type="TileSet" id=1]
 11/name = "TX Tileset Wall.png 11"
@@ -836,8 +836,13 @@ tile_data = PoolIntArray( 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0
 [node name="entities" type="YSort" parent="."]
 
 [node name="Path2D" type="Path2D" parent="."]
+scale = Vector2( 0.945507, 0.99437 )
 curve = SubResource( 4 )
 script = ExtResource( 3 )
+pause = true
+
+[node name="Enemyg" parent="Path2D" instance=ExtResource( 12 )]
+position = Vector2( 340, 272 )
 
 [node name="UI" type="Node" parent="."]
 script = ExtResource( 2 )
@@ -884,8 +889,5 @@ format = 1
 [node name="Basic" parent="." instance=ExtResource( 8 )]
 position = Vector2( 616, -72 )
 tower_range = 0
-
-[node name="Laser" parent="." instance=ExtResource( 12 )]
-position = Vector2( 318.555, 616.402 )
 
 [connection signal="area_entered" from="End" to="." method="_on_End_area_entered"]
