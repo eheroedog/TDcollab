@@ -23,14 +23,16 @@ func _physics_process(delta: float) -> void:
 	#set_sprite_rotation()
 	
 	#print(target_pos)
-	var cast_point := target_pos#cast_to
+	var cast_point := cast_to
 	force_raycast_update()
 	
 	if is_colliding():
 		cast_point = to_local(get_collision_point())
 		
-	$Line2D.points[1] = cast_point
-	print($Line2D.points[1])
+	$Line2D.points[1] = get_global_mouse_position()
+	print("Line2d: " + str($Line2D.points[1]))
+	print("Mouse: " + str(get_global_mouse_position()))
+
 func set_is_casting(cast: bool) -> void:
 	is_casting = cast
 	
