@@ -7,7 +7,7 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 96.1873
 
-[node name="Laser" type="Node2D"]
+[node name="LaserNode" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

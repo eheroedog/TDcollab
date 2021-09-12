@@ -9,12 +9,12 @@ export var tower_cost = 2
 signal shoot_projectile
 
 func _ready():
-	$Range/CollisionShape2D.shape.radius = 600 #TODO redo range scaling
-	var colScaling = tower_range / 600.0
-	$Range/CollisionShape2D.scale = Vector2(colScaling,colScaling)
-	$Range/CollisionShape2D.shape.radius = 600 #TODO redo range scaling
-	var rangeScaling = tower_range / 600.0
-	$range_overlay.scale = Vector2(rangeScaling,rangeScaling)
+	print(str($Range/CollisionShape2D.shape.radius))# = tower_range #TODO redo range scaling
+	#var colScaling = tower_range / 600.0
+	#$Range/CollisionShape2D.scale = Vector2(colScaling,colScaling)
+	#$Range/CollisionShape2D.shape.radius = 600 #TODO redo range scaling
+	#var rangeScaling = tower_range / 600.0
+	#$range_overlay.scale = Vector2(rangeScaling,rangeScaling)
 	$range_overlay.visible = false
 
 func _on_AttackSpeed_timeout():

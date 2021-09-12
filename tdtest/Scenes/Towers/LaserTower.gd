@@ -13,7 +13,6 @@ func _on_Range_area_entered(area):
 	if "Enemyg"in area.name or "bossg" in  area.name:
 		target_list.append(area)
 
-
 func _on_Range_area_exited(area):
 	if "Enemyg" in area.name or "bossg" in  area.name and target_list.size() > 0:
 		target_list.erase(area)

@@ -20,23 +20,17 @@ func _unhandled_input(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	direction = target_pos - origin_pos
 	
-	#set_sprite_rotation()
-	
-	#print(target_pos)
 	var cast_point := cast_to
 	force_raycast_update()
 	
+	set_sprite_rotation_t()
 	if is_colliding():
 		cast_point = to_local(get_collision_point())
 		
-	$Line2D.points[1] = get_global_mouse_position()
-	print("Line2d: " + str($Line2D.points[1]))
-	print("Mouse: " + str(get_global_mouse_position()))
+	$Line2D.points[1] = cast_point
 
 func set_is_casting(cast: bool) -> void:
 	is_casting = cast
-	
-	#$CastingParticles2D.emitting = is_casting
 	
 	if is_casting:
 		appear()
@@ -60,6 +54,9 @@ func _on_Laser_shoot_laser(origin,target):
 	target_pos = target
 	self.is_casting = true
 
+func set_sprite_rotation_t():
+	pass
+
 func set_sprite_rotation():
 	var angle
 	
@@ -73,13 +70,13 @@ func set_sprite_rotation():
 	
 	if direction.x >= 0 and direction.y >= 0:
 		# 4th quadrant
-		rotation_degrees = 180 - angle
+		rotation = 180 - angle
 	elif direction.x >= 0 and direction.y <= 0:
 		# 1st quadrant
-		rotation_degrees = abs(angle)
+		rotation = abs(angle)
 	elif direction.x <= 0 and direction.y >= 0:
 		# 3rd quadrant
-		rotation_degrees = 180 + abs(angle)
+		rotation = 180 + abs(angle)
 	elif direction.x <= 0 and direction.y <= 0:
 		# 2nd quadrant
-		rotation_degrees = 360 - angle
+		rotation = 360 - angle
